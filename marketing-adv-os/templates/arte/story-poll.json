@@ -1,0 +1,77 @@
+{
+  "_meta": {
+    "name": "story-poll",
+    "description": "Story 9:16 com poll/enquete. Pergunta no terco superior + AREA RESERVADA para sticker de poll do Instagram (Y entre 800-1200). Maximiza engagement via interatividade nativa.",
+    "canvas_recomendado": ["instagram.stories"],
+    "uso_tipico": "Story de engajamento (poll, quiz, slider) — KPI = respostas + DM seguintes",
+    "regra_critica": "AREA do poll fica VAZIA na arte — sticker do Instagram e colocado por cima na publicacao."
+  },
+  "layout": "top-aligned",
+  "regioes": [
+    {
+      "id": "header_categoria",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-center",
+      "max_chars": 30,
+      "y_offset_px": 320,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 18,
+        "weight": 600,
+        "color": "accent",
+        "uppercase": true,
+        "letter_spacing_em": 0.12
+      },
+      "exemplo": "ENQUETE RAPIDA"
+    },
+    {
+      "id": "pergunta",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "top-center",
+      "y_offset_px": 450,
+      "max_palavras": 14,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 48,
+        "weight": 700,
+        "color": "neutral_dark",
+        "line_height": 1.15,
+        "alignment": "center"
+      },
+      "exemplo": "Voce ja perdeu prazo por anotacao no caderno?"
+    },
+    {
+      "id": "poll_placeholder",
+      "tipo": "area-reservada",
+      "obrigatorio": true,
+      "anchor": "center",
+      "y_offset_px": 800,
+      "height_px": 400,
+      "width_px": 1000,
+      "notes": "AREA VAZIA na arte. Sticker de poll do Instagram (2 opcoes) sera colocado por cima na hora de postar. Largura ~1000px, altura ~400px na zona central."
+    },
+    {
+      "id": "rodape_marca",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "bottom-center",
+      "max_chars": 25,
+      "y_offset_px": 1600,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 18,
+        "weight": 500,
+        "color": "neutral_dark"
+      },
+      "exemplo": "@marca_handle"
+    }
+  ],
+  "premissas": [
+    "Pergunta CURTA — leitor decide responder em <2s",
+    "Poll widget na zona central (Y 800-1200) — area RESERVADA na arte",
+    "Sem CTA — interacao e a propria resposta do poll",
+    "Pos-publicacao: usar DMs de quem respondeu pra criar conversa qualificada (Track A respeita VE-06)"
+  ]
+}

@@ -1,0 +1,19 @@
+# Build artifacts
+dist/
+build/
+*.zip
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# macOS
+.DS_Store
+
+# Dev internal
+audit/.cache/
+context/persona-fallback.local.md
+
+# State (per-user)
+marketing/

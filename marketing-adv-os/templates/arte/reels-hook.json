@@ -1,0 +1,84 @@
+{
+  "_meta": {
+    "name": "reels-hook",
+    "description": "Tela inicial / capa de Reels 9:16 com hook visual + texto sobreposto. Os primeiros 3 segundos do video DECIDEM se viewer fica. Texto on-screen deve estar dentro da AI-SAFE V2 (margem base 460px por causa da UI agressiva do Reels).",
+    "canvas_recomendado": ["instagram.reels"],
+    "uso_tipico": "Capa/frame inicial de Reels 45-60s",
+    "regra_critica": "Margem BASE 460px obrigatoria — UI do Reels (CTAs laterais + descricao) cobre essa area."
+  },
+  "layout": "top-aligned",
+  "regioes": [
+    {
+      "id": "indicador_topo",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-center",
+      "y_offset_px": 200,
+      "max_chars": 30,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 22,
+        "weight": 700,
+        "color": "accent",
+        "uppercase": true,
+        "letter_spacing_em": 0.12
+      },
+      "exemplo": "60 SEGUNDOS · TESE TECNICA"
+    },
+    {
+      "id": "hook_principal",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "center-top",
+      "y_offset_px": 450,
+      "max_palavras": 12,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 84,
+        "weight": 800,
+        "color": "neutral_dark",
+        "background": "accent",
+        "padding_x_px": 24,
+        "padding_y_px": 16,
+        "line_height": 1.05,
+        "alignment": "center",
+        "max_lines": 3
+      },
+      "estrategias_de_hook": [
+        "Numero impactante: '90% nunca leu isso'",
+        "Pergunta provocadora: 'Voce sabia que...?'",
+        "Afirmacao contraintuitiva: 'Contrato modelo nao protege'",
+        "Pain point: 'Voce ja perdeu cliente por isso'",
+        "Curiosidade: 'O erro que [persona] comete'"
+      ],
+      "exemplo": "VOCE NAO TEM CLAUSULA DE EXCLUSIVIDADE"
+    },
+    {
+      "id": "subtitle_complemento",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "center-bottom",
+      "y_offset_px": 950,
+      "max_palavras": 18,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 32,
+        "weight": 500,
+        "color": "neutral_light",
+        "background_overlay": "rgba(0,0,0,0.6)",
+        "padding_x_px": 24,
+        "padding_y_px": 12,
+        "alignment": "center",
+        "line_height": 1.3
+      },
+      "exemplo": "E seu socio pode fechar com seu concorrente amanha."
+    }
+  ],
+  "premissas": [
+    "Texto on-screen sai do enquadre se passar Y=1460 — UI do Reels cobre",
+    "Hook em ate 12 palavras — leitor tem 3s pra decidir ficar",
+    "Subtitle opcional — complementa hook quando ele e abstrato",
+    "Background do hook em accent color cria contraste e captura olho na rolagem",
+    "Indicador no topo opcional — sinaliza categoria editorial"
+  ]
+}

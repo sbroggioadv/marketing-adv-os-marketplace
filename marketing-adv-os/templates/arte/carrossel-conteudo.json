@@ -1,0 +1,93 @@
+{
+  "_meta": {
+    "name": "carrossel-conteudo",
+    "description": "Slides 2-9 (conteudo) do carrossel Instagram. UMA ideia por slide. Tipografia consistente entre slides. Slide 10 (CTA) tem template proprio (story-cta adaptado).",
+    "canvas_recomendado": ["instagram.feed_portrait", "instagram.feed_grid_3x4"],
+    "uso_tipico": "Slides intermediarios de carrossel educativo ou de autoridade",
+    "regra_critica": "MESMO canvas + MESMA tipografia + MESMA margem em TODOS os slides do mesmo carrossel"
+  },
+  "layout": "top-aligned",
+  "regioes": [
+    {
+      "id": "slide_number",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-right",
+      "max_chars": 5,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 16,
+        "weight": 700,
+        "color": "accent"
+      },
+      "exemplo": "3/7"
+    },
+    {
+      "id": "tema_slide",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-left",
+      "max_chars": 20,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 16,
+        "weight": 600,
+        "color": "accent",
+        "uppercase": true,
+        "letter_spacing_em": 0.1
+      },
+      "exemplo": "TESE 1"
+    },
+    {
+      "id": "titulo_slide",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "top",
+      "max_palavras": 10,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 44,
+        "weight": 700,
+        "color": "neutral_dark",
+        "line_height": 1.15
+      },
+      "exemplo": "Pacta sunt servanda nao protege risco"
+    },
+    {
+      "id": "corpo_slide",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "center",
+      "max_palavras": 55,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 26,
+        "weight": 500,
+        "color": "neutral_dark",
+        "line_height": 1.5
+      },
+      "exemplo": "O contrato empresarial e cumprido como pactuado. Insucesso comercial nao gera indenizacao automatica. STJ vem reforcando isso em [Tema XYZ]."
+    },
+    {
+      "id": "destaque",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "bottom-center",
+      "max_palavras": 8,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 28,
+        "weight": 700,
+        "color": "accent",
+        "alignment": "center"
+      },
+      "exemplo": "Risco e do negocio."
+    }
+  ],
+  "premissas": [
+    "1 ideia por slide — leitor que para aqui ainda entende",
+    "Titulo curto + corpo medio + destaque opcional",
+    "Cor accent reservada pra destaque/numeracao — texto principal em neutral_dark",
+    "Slides 2-9 do mesmo carrossel devem ter EXATAMENTE a mesma estrutura (so muda o texto)"
+  ]
+}

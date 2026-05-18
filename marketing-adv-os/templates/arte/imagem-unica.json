@@ -1,0 +1,79 @@
+{
+  "_meta": {
+    "name": "imagem-unica",
+    "description": "Imagem unica para Feed Instagram (4:5 ou 3:4) ou LinkedIn quadrado. Foco em UMA mensagem central forte com hierarquia tipografica clara (headline + subhead opcional).",
+    "canvas_recomendado": ["instagram.feed_portrait", "instagram.feed_grid_3x4", "linkedin.post_quadrado", "facebook.feed_post_square"],
+    "uso_tipico": "Peça unitaria com tese ou afirmacao tecnica forte"
+  },
+  "layout": "hero-with-subtext",
+  "regioes": [
+    {
+      "id": "eyebrow",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-left",
+      "max_chars": 30,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 14,
+        "weight": 600,
+        "color": "accent",
+        "uppercase": true,
+        "letter_spacing_em": 0.15
+      },
+      "exemplo": "TESE TECNICA · 2026"
+    },
+    {
+      "id": "headline",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "center",
+      "max_palavras": 14,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 64,
+        "weight": 700,
+        "color": "neutral_dark",
+        "line_height": 1.1,
+        "alignment": "center"
+      },
+      "exemplo": "A unica forma de proteger seu compliance"
+    },
+    {
+      "id": "subhead",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "center-bottom",
+      "max_palavras": 25,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 22,
+        "weight": 400,
+        "color": "accent",
+        "line_height": 1.4,
+        "alignment": "center"
+      },
+      "exemplo": "STJ acabou de fixar o entendimento — Tema XYZ"
+    },
+    {
+      "id": "assinatura",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "bottom-center",
+      "max_chars": 30,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 18,
+        "weight": 500,
+        "color": "neutral_dark"
+      },
+      "exemplo": "@marca_handle"
+    }
+  ],
+  "premissas": [
+    "Eyebrow OPCIONAL — usar quando ha categoria/tag editorial",
+    "Headline OBRIGATORIO — max 14 palavras pra caber em mobile",
+    "Subhead OPCIONAL — adiciona contexto se headline e abstrata demais",
+    "Assinatura OPCIONAL — @handle ou logo pequeno no canto inferior"
+  ]
+}
