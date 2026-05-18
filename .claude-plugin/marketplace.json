@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "marketing-adv-os-marketplace",
+  "description": "Marketplace oficial do plugin Marketing-Adv-OS. Plugin de marketing para escritórios de advocacia e empreendedores juridicos com track selector (advogado vs empresário), 47 skills cobrindo marca, copywriting, artes, produção e auditoria via Diretoria Criativa R1-R4. Governance OAB Provimento 205 (track A) ou CONAR+LGPD (track B).",
+  "owner": {
+    "name": "Sbroggio Advocacia & IA Combativa"
+  },
+  "plugins": [
+    {
+      "name": "marketing-adv-os",
+      "source": "./marketing-adv-os",
+      "description": "Plugin completo de marketing juridico/comercial. 47 skills: wizard de onboarding, identidade visual (paleta + voz + tipografia + tokens CSS), 18 skills de copywriting, 6 skills de artes (PNG/PPTX/Carrossel/Stories/Reels), 5 skills de producao (Landing Page HTML+Next/Ebook/Slides), 5 integracoes opt-in (Meta Ads/Canva/Postiz/Email broadcast), 5 skills de auditoria via Diretoria Criativa R1-R4. Track A (advogado/escritorio) ou Track B (empresario/criador).",
+      "author": {
+        "name": "Sbroggio Advocacia & IA Combativa"
+      }
+    }
+  ]
+}

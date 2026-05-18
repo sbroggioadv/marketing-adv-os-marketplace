@@ -1,0 +1,171 @@
+/**
+ * Template Next.js 15 + Tailwind 3.4 para landing page gerada por marketing-landing-page-nextjs.
+ *
+ * Substituicoes {{...}} feitas pelo render.py / script de scaffold da skill.
+ * Path final: apps/<app>/app/<slug>/page.tsx OU app/<slug>/page.tsx
+ *
+ * Pre-requisito do projeto destino: Tailwind 3.4+ (NAO v4) + React 18.2+
+ * Tokens da marca: copiar tokens.css gerado por marketing-tokens-css para globals.css
+ */
+
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "{{TITULO}} — {{MARCA}}",
+  description: "{{META_DESCRIPTION}}",
+  openGraph: {
+    title: "{{TITULO}}",
+    description: "{{META_DESCRIPTION}}",
+    images: ["{{OG_IMAGE_URL}}"],
+    url: "{{URL_CANONICA}}",
+    type: "website",
+  },
+};
+
+type Beneficio = { titulo: string; descricao: string };
+type Depoimento = { fala: string; autor: string };
+type FAQItem = { pergunta: string; resposta: string };
+
+const beneficios: Beneficio[] = [
+  { titulo: "{{BENEFICIO_1_TITULO}}", descricao: "{{BENEFICIO_1_DESC}}" },
+  { titulo: "{{BENEFICIO_2_TITULO}}", descricao: "{{BENEFICIO_2_DESC}}" },
+  { titulo: "{{BENEFICIO_3_TITULO}}", descricao: "{{BENEFICIO_3_DESC}}" },
+];
+
+const depoimentos: Depoimento[] = [
+  { fala: "{{DEPOIMENTO_1_FALA}}", autor: "{{DEPOIMENTO_1_AUTOR}}" },
+  { fala: "{{DEPOIMENTO_2_FALA}}", autor: "{{DEPOIMENTO_2_AUTOR}}" },
+];
+
+const faqs: FAQItem[] = [
+  { pergunta: "{{FAQ_1_PERGUNTA}}", resposta: "{{FAQ_1_RESPOSTA}}" },
+  { pergunta: "{{FAQ_2_PERGUNTA}}", resposta: "{{FAQ_2_RESPOSTA}}" },
+];
+
+export default function Page() {
+  return (
+    <main>
+      {/* HERO */}
+      <section className="min-h-[80vh] flex flex-col justify-center px-6 py-16 bg-[var(--bg)]">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-sm uppercase tracking-widest text-[var(--accent)] font-semibold mb-4">
+            {"{{EYEBROW}}"}
+          </div>
+          <h1 className="font-primary text-4xl md:text-6xl font-bold leading-[1.1] max-w-3xl mb-6">
+            {"{{HEADLINE_HERO}}"}
+          </h1>
+          <p className="text-lg md:text-2xl max-w-2xl mb-8 text-[var(--color-secondary)]">
+            {"{{SUBHEAD_HERO}}"}
+          </p>
+          <div className="flex gap-4 flex-wrap">
+            <Link
+              href="{{CTA_PRIMARIO_URL}}"
+              className="inline-block bg-[var(--accent)] text-[var(--cta-text)] px-8 py-4 rounded-lg font-semibold text-lg hover:-translate-y-0.5 transition-transform shadow-md hover:shadow-lg"
+            >
+              {"{{CTA_PRIMARIO_TEXTO}}"}
+            </Link>
+            <Link
+              href="{{CTA_SECUNDARIO_URL}}"
+              className="inline-block border-2 border-[var(--text)] text-[var(--text)] px-8 py-4 rounded-lg font-semibold text-lg hover:bg-[var(--text)] hover:text-[var(--bg)] transition-colors"
+            >
+              {"{{CTA_SECUNDARIO_TEXTO}}"}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* BENEFICIOS */}
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-primary text-3xl md:text-4xl font-semibold text-center mb-12">
+            {"{{BENEFICIOS_TITULO}}"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {beneficios.map((b, i) => (
+              <div key={i} className="p-6 bg-[var(--color-primary)] text-[var(--text-inv)] rounded-xl">
+                <h3 className="text-[var(--accent)] text-xl font-semibold mb-3">{b.titulo}</h3>
+                <p>{b.descricao}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* PROVA SOCIAL */}
+      <section className="py-16 px-6 bg-[var(--color-primary)] text-[var(--text-inv)]">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-primary text-3xl md:text-4xl font-semibold text-center mb-12">
+            {"{{PROVA_SOCIAL_TITULO}}"}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {depoimentos.map((d, i) => (
+              <div key={i} className="p-6 bg-white/5 border-l-4 border-[var(--accent)] rounded-md">
+                <div className="italic mb-3">&quot;{d.fala}&quot;</div>
+                <div className="text-sm text-[var(--accent)]">— {d.autor}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* OFERTA */}
+      <section className="py-16 px-6 bg-[var(--accent)] text-[var(--cta-text)] text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-primary text-3xl md:text-4xl font-semibold mb-6">
+            {"{{OFERTA_TITULO}}"}
+          </h2>
+          <p className="text-lg mb-6">{"{{OFERTA_DESCRICAO}}"}</p>
+          <div className="text-6xl md:text-7xl font-bold my-8">
+            {"{{#PRECO_ANCORAGEM}}"}
+            <span className="text-2xl line-through opacity-70 mr-3">R$ {"{{PRECO_ANCORAGEM}}"}</span>
+            {"{{/PRECO_ANCORAGEM}}"}
+            R$ {"{{PRECO_OFERTA}}"}
+          </div>
+          <Link
+            href="{{CHECKOUT_URL}}"
+            className="inline-block bg-[var(--text)] text-[var(--bg)] px-10 py-5 rounded-lg text-xl font-semibold hover:-translate-y-0.5 transition-transform shadow-lg"
+          >
+            {"{{CTA_OFERTA_TEXTO}}"}
+          </Link>
+          <p className="mt-4 text-sm">{"{{GARANTIA_TEXTO}}"}</p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 px-6">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-primary text-3xl font-semibold text-center mb-12">
+            Perguntas frequentes
+          </h2>
+          {faqs.map((f, i) => (
+            <details key={i} className="border-b border-[var(--text)]/15 py-4 group">
+              <summary className="cursor-pointer font-semibold flex justify-between items-center list-none">
+                <span>{f.pergunta}</span>
+                <span className="text-[var(--accent)] text-2xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-[var(--color-secondary)]">{f.resposta}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[var(--bg-dark)] text-[var(--text-inv)] py-12 px-6 text-center text-sm">
+        <div className="max-w-6xl mx-auto">
+          <p>&copy; {"{{ANO}}"} {"{{MARCA}}"}. Todos os direitos reservados.</p>
+          <p className="text-xs opacity-70 mt-4 max-w-3xl mx-auto">{"{{DISCLAIMER_LEGAL}}"}</p>
+          <p className="mt-3">
+            <Link href="{{POLITICA_PRIVACIDADE_URL}}" className="text-[var(--accent)] hover:underline">
+              Politica de Privacidade
+            </Link>
+            {" | "}
+            <Link href="{{TERMOS_URL}}" className="text-[var(--accent)] hover:underline">
+              Termos de Uso
+            </Link>
+          </p>
+        </div>
+      </footer>
+    </main>
+  );
+}

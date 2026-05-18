@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITULO}} — {{MARCA}}</title>
+<meta name="description" content="{{META_DESCRIPTION}}">
+
+<!-- Open Graph (preview ao compartilhar link em FB/LinkedIn/WhatsApp) -->
+<meta property="og:title" content="{{TITULO}}">
+<meta property="og:description" content="{{META_DESCRIPTION}}">
+<meta property="og:image" content="{{OG_IMAGE_URL}}">
+<meta property="og:url" content="{{URL_CANONICA}}">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="{{FAVICON_URL}}" type="image/png">
+<link rel="canonical" href="{{URL_CANONICA}}">
+
+<!-- Tokens da marca (gerado por marketing-tokens-css) -->
+<link rel="stylesheet" href="./tokens.css">
+
+<style>
+  /* Layout especifico desta LP (estende tokens.css) */
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { -webkit-font-smoothing: antialiased; }
+
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--space-6); }
+
+  /* HERO */
+  .hero {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--space-16) 0;
+    background: var(--bg);
+  }
+  .hero .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: var(--space-4);
+  }
+  .hero h1 {
+    font-size: clamp(36px, 6vw, var(--fs-h1));
+    font-weight: var(--fw-h1);
+    line-height: var(--lh-h1);
+    max-width: 720px;
+    margin-bottom: var(--space-6);
+  }
+  .hero .subhead {
+    font-size: clamp(18px, 2.5vw, 22px);
+    max-width: 600px;
+    margin-bottom: var(--space-8);
+    color: var(--color-secondary);
+  }
+  .hero .cta-group {
+    display: flex;
+    gap: var(--space-4);
+    flex-wrap: wrap;
+  }
+
+  /* CTA */
+  .btn-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--cta-text);
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn-cta:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--text);
+  }
+
+  /* SECTIONS */
+  section { padding: var(--space-16) 0; }
+  section h2 {
+    font-size: clamp(28px, 4vw, var(--fs-h2));
+    text-align: center;
+    margin-bottom: var(--space-12);
+  }
+
+  /* BENEFICIOS */
+  .beneficios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-8);
+  }
+  .beneficio-card {
+    padding: var(--space-6);
+    background: var(--color-primary);
+    color: var(--text-inv);
+    border-radius: var(--radius-lg);
+    border: 1px solid color-mix(in srgb, var(--text) 8%, transparent);
+  }
+  .beneficio-card h3 {
+    color: var(--accent);
+    margin-bottom: var(--space-3);
+    font-size: 22px;
+  }
+
+  /* PROVA SOCIAL */
+  .prova-social { background: var(--color-primary); color: var(--text-inv); }
+  .prova-social h2 { color: var(--text-inv); }
+  .depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-6);
+  }
+  .depoimento {
+    padding: var(--space-6);
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-md);
+  }
+  .depoimento .fala { font-style: italic; margin-bottom: var(--space-3); }
+  .depoimento .autor { font-size: 14px; color: var(--accent); }
+
+  /* OFERTA */
+  .oferta {
+    text-align: center;
+    background: var(--accent);
+    color: var(--cta-text);
+  }
+  .oferta h2 { color: var(--cta-text); }
+  .preco {
+    font-size: clamp(48px, 8vw, 72px);
+    font-weight: var(--fw-h1);
+    margin: var(--space-6) 0;
+  }
+  .ancoragem {
+    font-size: 18px;
+    text-decoration: line-through;
+    opacity: 0.7;
+    margin-right: var(--space-3);
+  }
+
+  /* FAQ */
+  details {
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 15%, transparent);
+    padding: var(--space-4) 0;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  summary::after { content: '+'; font-size: 24px; color: var(--accent); transition: transform 0.2s; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p { margin-top: var(--space-3); color: var(--color-secondary); }
+
+  /* FOOTER */
+  footer {
+    background: var(--bg-dark);
+    color: var(--text-inv);
+    padding: var(--space-12) 0;
+    text-align: center;
+    font-size: 14px;
+  }
+  footer a { color: var(--accent); }
+  .disclaimer {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-top: var(--space-4);
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    section { padding: var(--space-12) 0; }
+    .hero { min-height: 70vh; padding: var(--space-12) 0; }
+    .beneficios-grid, .depoimentos { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="container">
+    <div class="eyebrow">{{EYEBROW}}</div>
+    <h1>{{HEADLINE_HERO}}</h1>
+    <p class="subhead">{{SUBHEAD_HERO}}</p>
+    <div class="cta-group">
+      <a href="{{CTA_PRIMARIO_URL}}" class="btn-cta">{{CTA_PRIMARIO_TEXTO}}</a>
+      <a href="{{CTA_SECUNDARIO_URL}}" class="btn-cta btn-secondary">{{CTA_SECUNDARIO_TEXTO}}</a>
+    </div>
+  </div>
+</header>
+
+<section class="beneficios">
+  <div class="container">
+    <h2>{{BENEFICIOS_TITULO}}</h2>
+    <div class="beneficios-grid">
+      <!-- repeat beneficio-card 3-6x -->
+      <div class="beneficio-card">
+        <h3>{{BENEFICIO_1_TITULO}}</h3>
+        <p>{{BENEFICIO_1_DESC}}</p>
+      </div>
+      <!-- ... -->
+    </div>
+  </div>
+</section>
+
+<section class="prova-social">
+  <div class="container">
+    <h2>{{PROVA_SOCIAL_TITULO}}</h2>
+    <div class="depoimentos">
+      <!-- repeat depoimento 2-4x -->
+      <div class="depoimento">
+        <div class="fala">"{{DEPOIMENTO_1_FALA}}"</div>
+        <div class="autor">— {{DEPOIMENTO_1_AUTOR}}</div>
+      </div>
+      <!-- ... -->
+    </div>
+  </div>
+</section>
+
+<section class="oferta">
+  <div class="container">
+    <h2>{{OFERTA_TITULO}}</h2>
+    <p>{{OFERTA_DESCRICAO}}</p>
+    <div class="preco">
+      {{#PRECO_ANCORAGEM}}<span class="ancoragem">R$ {{PRECO_ANCORAGEM}}</span>{{/PRECO_ANCORAGEM}}
+      R$ {{PRECO_OFERTA}}
+    </div>
+    <a href="{{CHECKOUT_URL}}" class="btn-cta">{{CTA_OFERTA_TEXTO}}</a>
+    <p style="margin-top: var(--space-4); font-size: 14px;">{{GARANTIA_TEXTO}}</p>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <details>
+      <summary>{{FAQ_1_PERGUNTA}}</summary>
+      <p>{{FAQ_1_RESPOSTA}}</p>
+    </details>
+    <!-- repeat 5-8x -->
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p>&copy; {{ANO}} {{MARCA}}. Todos os direitos reservados.</p>
+    <p class="disclaimer">{{DISCLAIMER_LEGAL}}</p>
+    <p style="margin-top: var(--space-3);">
+      <a href="{{POLITICA_PRIVACIDADE_URL}}">Politica de Privacidade</a> |
+      <a href="{{TERMOS_URL}}">Termos de Uso</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

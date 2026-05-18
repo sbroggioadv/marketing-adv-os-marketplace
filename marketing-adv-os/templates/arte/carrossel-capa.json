@@ -1,0 +1,61 @@
+{
+  "_meta": {
+    "name": "carrossel-capa",
+    "description": "Slide 1 (capa) do carrossel Instagram. PRECISA capturar atencao em <3s. Hook visual + headline forte. Slide 1 define o aspect ratio de TODOS os 20 slides do carrossel.",
+    "canvas_recomendado": ["instagram.feed_portrait", "instagram.feed_grid_3x4"],
+    "uso_tipico": "Capa de carrossel — primeira impressao decide swipe-through rate"
+  },
+  "layout": "centered",
+  "regioes": [
+    {
+      "id": "slide_number",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-right",
+      "max_chars": 5,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 16,
+        "weight": 700,
+        "color": "accent"
+      },
+      "exemplo": "1/7"
+    },
+    {
+      "id": "hook_visual",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "center",
+      "max_palavras": 12,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 72,
+        "weight": 800,
+        "color": "neutral_dark",
+        "line_height": 1.05,
+        "alignment": "center"
+      },
+      "estrategias_de_hook": [
+        "Numero impactante (90% comete esse erro)",
+        "Pergunta provocadora",
+        "Afirmacao contraintuitiva",
+        "Promessa especifica + tempo",
+        "Contradicao (todo mundo diz X. A verdade e Y)"
+      ],
+      "exemplo": "Maioria dos contratos NULOS por isso"
+    },
+    {
+      "id": "arrow_swipe",
+      "tipo": "indicador",
+      "obrigatorio": true,
+      "anchor": "bottom-right",
+      "exemplo": "->"
+    }
+  ],
+  "premissas": [
+    "Hook em ate 12 palavras — caber em mobile e ser lido em <3s",
+    "Indicador visual de swipe — emoji seta ou texto 'desliza' na zona segura",
+    "Numeracao opcional — ajuda viewers saberem quanto falta",
+    "Slide 1 define ratio: TODOS os outros slides do mesmo carrossel devem usar o mesmo canvas"
+  ]
+}

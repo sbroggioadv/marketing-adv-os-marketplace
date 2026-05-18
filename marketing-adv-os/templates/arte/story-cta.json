@@ -1,0 +1,76 @@
+{
+  "_meta": {
+    "name": "story-cta",
+    "description": "Story 9:16 com CTA dominante. Hook curto + CTA grande dentro da AI-SAFE (margens generosas top/base por causa da UI agressiva do Stories). Otimizado para sticker de link em cima do CTA.",
+    "canvas_recomendado": ["instagram.stories", "facebook.stories", "linkedin.stories"],
+    "uso_tipico": "Story unico com 1 acao primaria (link, swipe up, agendamento)"
+  },
+  "layout": "centered",
+  "regioes": [
+    {
+      "id": "marca",
+      "tipo": "texto",
+      "obrigatorio": false,
+      "anchor": "top-center",
+      "max_chars": 25,
+      "estilo": {
+        "font": "secondary",
+        "size_pt": 20,
+        "weight": 600,
+        "color": "accent",
+        "uppercase": true,
+        "letter_spacing_em": 0.1
+      },
+      "y_offset_px": 320,
+      "exemplo": "@MARCA_HANDLE"
+    },
+    {
+      "id": "hook",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "center",
+      "max_palavras": 10,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 56,
+        "weight": 700,
+        "color": "neutral_dark",
+        "line_height": 1.1,
+        "alignment": "center"
+      },
+      "exemplo": "Voce ainda usa contrato modelo de internet?"
+    },
+    {
+      "id": "cta_text",
+      "tipo": "texto",
+      "obrigatorio": true,
+      "anchor": "bottom-center",
+      "max_chars": 30,
+      "y_offset_px": 1500,
+      "estilo": {
+        "font": "primary",
+        "size_pt": 32,
+        "weight": 700,
+        "color": "neutral_light",
+        "background": "accent",
+        "border_radius_px": 12,
+        "padding_x_px": 32,
+        "padding_y_px": 16,
+        "alignment": "center"
+      },
+      "exemplo": "VER O QUE PROTEGE"
+    },
+    {
+      "id": "sticker_link_hint",
+      "tipo": "indicador",
+      "obrigatorio": true,
+      "notes": "Posicionar o sticker de link do Instagram NO TOPO do CTA box (mesma area). Sticker do Instagram precisa ter +20px de toque pra usuario clicar."
+    }
+  ],
+  "premissas": [
+    "Margem TOP 280px (UI do Stories tem header + handle + audience picker)",
+    "Margem BASE 300px (UI do Stories tem footer + reply box)",
+    "CTA box dentro da AI-SAFE — sticker de link colocado por cima na hora de postar",
+    "Voz: pergunta provocadora -> CTA imperativo curto"
+  ]
+}

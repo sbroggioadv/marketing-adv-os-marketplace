@@ -1,0 +1,279 @@
+{
+  "_meta": {
+    "schema_version": "1.0",
+    "spec_year": 2026,
+    "plugin": "marketing-adv-os",
+    "description": "Mapa canonico de dimensoes e zonas seguras para artes de marketing digital. Calibrado para algoritmo 2026 (Mosseri update Q1 2026). Inclui AI-SAFE zones (zona segura com buffer extra para artes geradas por IA, que tipicamente descalibram 30-50px). Toda skill de arte (PNG, PPTX, carrossel, stories) consulta este arquivo.",
+    "rule_of_thumb": "1080px e a baseline universal de largura. Subir abaixo de 1080 = imagem borrada por construcao (Instagram estica de 320 e reduz acima de 1080).",
+    "color_space_obrigatorio": "sRGB"
+  },
+
+  "instagram": {
+    "feed_portrait": {
+      "label": "Feed Portrait (DEFAULT 2026)",
+      "canvas": { "width": 1080, "height": 1350 },
+      "aspect_ratio": "4:5",
+      "status_2026": "default_operacional",
+      "ai_safe_v3": {
+        "width": 900,
+        "height": 1010,
+        "margin_top": 170,
+        "margin_bottom": 170,
+        "margin_left": 90,
+        "margin_right": 90
+      },
+      "uso_tipico": ["imagem unica", "carrossel padrao"],
+      "export_format": "PNG-24",
+      "notes": "Default geral. Versao V3 da AI-SAFE (+40% de respiro vs V2)."
+    },
+
+    "feed_grid_3x4": {
+      "label": "Feed Grid 3:4 (NOVO Mosseri 2026)",
+      "canvas": { "width": 1080, "height": 1440 },
+      "aspect_ratio": "3:4",
+      "status_2026": "novo_recomendado",
+      "ai_safe_v3": {
+        "width": 900,
+        "height": 1100,
+        "margin_top": 170,
+        "margin_bottom": 170,
+        "margin_left": 90,
+        "margin_right": 90
+      },
+      "uso_tipico": ["prioridade grid limpa", "consistencia visual no perfil"],
+      "export_format": "PNG-24",
+      "notes": "Otimizado para o novo grid de 2026."
+    },
+
+    "feed_square": {
+      "label": "Feed Square (DEPRECADO 2026)",
+      "canvas": { "width": 1080, "height": 1080 },
+      "aspect_ratio": "1:1",
+      "status_2026": "deprecado",
+      "ai_safe_v3": {
+        "width": 900,
+        "height": 900,
+        "margin_top": 90,
+        "margin_bottom": 90,
+        "margin_left": 90,
+        "margin_right": 90
+      },
+      "uso_tipico": ["legado", "compatibilidade cross-platform"],
+      "export_format": "PNG-24",
+      "notes": "Suportado mas perde real estate. Evitar para organico."
+    },
+
+    "feed_landscape": {
+      "label": "Feed Landscape (PENALIZADO)",
+      "canvas": { "width": 1080, "height": 566 },
+      "aspect_ratio": "1.91:1",
+      "status_2026": "penalizado",
+      "uso_tipico": ["NAO usar para organico"],
+      "notes": "Despriorizado pelo algoritmo. Usar apenas em ads se necessario."
+    },
+
+    "stories": {
+      "label": "Stories",
+      "canvas": { "width": 1080, "height": 1920 },
+      "aspect_ratio": "9:16",
+      "status_2026": "inalterado",
+      "ai_safe_v2": {
+        "width": 920,
+        "height": 1340,
+        "margin_top": 280,
+        "margin_bottom": 300,
+        "margin_left": 80,
+        "margin_right": 80,
+        "notes": "Margem top 280 para sticker de perfil + handle. Margem base 300 para CTA sticker."
+      },
+      "uso_tipico": ["stories sequencia (5 telas)", "sticker link", "poll", "quiz"],
+      "export_format": "PNG-24 (estatico) ou MP4 H.264 (video)",
+      "notes": "UI do Stories tem header + footer agressivos — margens grandes."
+    },
+
+    "reels": {
+      "label": "Reels",
+      "canvas": { "width": 1080, "height": 1920 },
+      "aspect_ratio": "9:16",
+      "status_2026": "inalterado",
+      "ai_safe_v2": {
+        "width": 850,
+        "height": 1330,
+        "margin_top": 130,
+        "margin_bottom": 460,
+        "margin_left": 80,
+        "margin_right": 150,
+        "notes": "Base 460 maior que stories pq UI do Reels e mais agressiva (CTAs laterais)."
+      },
+      "duracao_max_segundos": 90,
+      "fps_minimo": 30,
+      "bitrate_recomendado_kbps": [4000, 6000],
+      "uso_tipico": ["reels 45-60s", "hook em 3s"],
+      "export_format": "MP4 H.264 + AAC",
+      "capa_export_format": "PNG-24"
+    },
+
+    "carrossel": {
+      "label": "Carrossel (consistente em todos os slides)",
+      "regra_critica": "Primeiro slide DEFINE o aspect ratio de TODOS os 20 slides. Slide com ratio diferente sera cortado ao centro.",
+      "max_slides": 20,
+      "ratio_recomendado_2026": "4:5 ou 3:4 (NUNCA quadrado)",
+      "video_dentro_max_segundos": 60,
+      "imagem_max_mb": 30,
+      "video_max_mb": 4096,
+      "ai_safe_v3": "mesma do feed_portrait OU feed_grid_3x4 conforme aspect_ratio escolhido"
+    }
+  },
+
+  "facebook": {
+    "feed_post": {
+      "label": "Feed Post (FB Desktop + Mobile)",
+      "canvas": { "width": 1200, "height": 630 },
+      "aspect_ratio": "1.91:1",
+      "ai_safe_v3": {
+        "width": 1020,
+        "height": 530,
+        "margin_top": 50,
+        "margin_bottom": 50,
+        "margin_left": 90,
+        "margin_right": 90
+      },
+      "export_format": "PNG-24 ou JPG 85%"
+    },
+    "feed_post_square": {
+      "label": "Feed Post quadrado (alternativo)",
+      "canvas": { "width": 1080, "height": 1080 },
+      "aspect_ratio": "1:1",
+      "ai_safe_v3": { "width": 900, "height": 900, "margin_top": 90, "margin_bottom": 90, "margin_left": 90, "margin_right": 90 }
+    },
+    "stories": {
+      "label": "Facebook Stories",
+      "canvas": { "width": 1080, "height": 1920 },
+      "aspect_ratio": "9:16",
+      "ai_safe_v2": { "width": 920, "height": 1340, "margin_top": 280, "margin_bottom": 300, "margin_left": 80, "margin_right": 80 }
+    },
+    "cover_page": {
+      "label": "Capa de Pagina FB",
+      "canvas": { "width": 1640, "height": 624 },
+      "aspect_ratio": "2.63:1",
+      "notes": "Largura otimizada para evitar crop em mobile (na mobile fica 640x360)"
+    }
+  },
+
+  "linkedin": {
+    "post_horizontal": {
+      "label": "Post LinkedIn horizontal (default feed)",
+      "canvas": { "width": 1200, "height": 627 },
+      "aspect_ratio": "1.91:1",
+      "ai_safe_v3": {
+        "width": 1020,
+        "height": 527,
+        "margin_top": 50,
+        "margin_bottom": 50,
+        "margin_left": 90,
+        "margin_right": 90
+      },
+      "export_format": "PNG-24"
+    },
+    "post_quadrado": {
+      "label": "Post LinkedIn quadrado (preferido para fixar atencao mobile)",
+      "canvas": { "width": 1200, "height": 1200 },
+      "aspect_ratio": "1:1",
+      "ai_safe_v3": { "width": 1020, "height": 1020, "margin_top": 90, "margin_bottom": 90, "margin_left": 90, "margin_right": 90 },
+      "uso_tipico": ["maior real estate no scroll mobile"]
+    },
+    "stories": {
+      "label": "Stories LinkedIn (mobile)",
+      "canvas": { "width": 1080, "height": 1920 },
+      "aspect_ratio": "9:16",
+      "ai_safe_v2": { "width": 920, "height": 1340, "margin_top": 280, "margin_bottom": 300, "margin_left": 80, "margin_right": 80 }
+    },
+    "artigo_capa": {
+      "label": "Capa de artigo (LinkedIn Article)",
+      "canvas": { "width": 1200, "height": 644 },
+      "aspect_ratio": "1.86:1",
+      "export_format": "PNG-24 ou JPG 90%"
+    }
+  },
+
+  "email": {
+    "header": {
+      "label": "Header de email marketing",
+      "canvas": { "width": 600, "height": 200 },
+      "aspect_ratio": "3:1",
+      "export_format": "PNG-24 ou JPG 85%",
+      "notes": "Largura max 600px e standard de email — clientes (Gmail, Outlook) renderizam ate 640. Acima disso quebra."
+    },
+    "hero_email": {
+      "label": "Hero principal de email (max 600 largura)",
+      "canvas": { "width": 600, "height": 400 },
+      "aspect_ratio": "3:2"
+    }
+  },
+
+  "landing_page": {
+    "hero_desktop": {
+      "label": "Hero de LP desktop (background)",
+      "canvas": { "width": 1920, "height": 1080 },
+      "aspect_ratio": "16:9",
+      "export_format": "JPG 90% ou WebP"
+    },
+    "hero_mobile": {
+      "label": "Hero de LP mobile (background)",
+      "canvas": { "width": 1080, "height": 1920 },
+      "aspect_ratio": "9:16",
+      "export_format": "JPG 90% ou WebP"
+    },
+    "favicon": {
+      "label": "Favicon",
+      "canvas": { "width": 512, "height": 512 },
+      "aspect_ratio": "1:1",
+      "export_format": "PNG-24 (com transparencia)"
+    },
+    "og_image": {
+      "label": "Open Graph image (preview ao compartilhar link)",
+      "canvas": { "width": 1200, "height": 630 },
+      "aspect_ratio": "1.91:1",
+      "export_format": "JPG 85% ou PNG-24",
+      "notes": "Mesma dimensao do FB feed_post — Facebook, LinkedIn e WhatsApp consomem essa tag."
+    }
+  },
+
+  "regras_universais_2026": {
+    "largura_minima_px": 1080,
+    "color_space_obrigatorio": "sRGB",
+    "color_space_proibido": ["CMYK", "DCI-P3"],
+    "fonte_minima_legivel_mobile_px": 24,
+    "fonte_minima_v3_corpo": 26,
+    "fonte_minima_v3_eyebrow": 22,
+    "fonte_minima_v3_meta": 18,
+    "naming_convention": "[YYYY-WXX]-[NN]-[formato]-[slug].[ext]",
+    "naming_exemplo": "2026-W25-01-carrossel-slide01-tema-x.png"
+  },
+
+  "premissas_decalogo_2026": [
+    "Default sempre 4:5 (1080x1350) para feed; 3:4 (1080x1440) se prioridade e grid limpa",
+    "Stories e Reels sempre 9:16 (1080x1920) com AI-SAFE respeitada",
+    "Margem lateral minima 60-80px em portrait (anti-crop grid 3:4)",
+    "Minimo 1080px de largura — nunca menos",
+    "Carrossel: primeiro slide define ratio de TODOS os slides. Inconsistencia = crop ao centro",
+    "PNG para texto/logo, JPG 85-95% para foto, MP4 H.264 para video, sRGB sempre",
+    "Fonte minima legivel mobile: 24px. Pensar em tela de 5-6 polegadas, nao desktop",
+    "Hook visual nos slides 1-3 do carrossel (decide swipe-through) ou primeiros 3s do Reels",
+    "CTA unico, dentro da AI-SAFE zone, calibrado ao objetivo do post",
+    "Toda peca passa por preview com UI ligada — se UI cobre elemento critico, refaz"
+  ],
+
+  "checklist_validacao_tecnica": [
+    "Resolucao exata bate com canvas declarado",
+    "Aspect ratio confere",
+    "Conteudo critico (rosto, logo, headline, CTA, palavra-chave) dentro da AI-SAFE zone",
+    "Formato de arquivo correto: PNG-24 texto/logo, JPG foto, MP4 H.264 video",
+    "Color space sRGB",
+    "Fonte minima 24px em qualquer elemento legivel",
+    "Carrossel: todos slides com mesma resolucao + ratio + margem",
+    "Naming bate convencao YYYY-WXX-NN-formato-slug.ext",
+    "Reels: ate 90s, bitrate 4000-6000 kbps, 30fps min",
+    "Sem watermark de outra plataforma"
+  ]
+}
