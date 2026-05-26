@@ -34,7 +34,7 @@ claude plugin install marketing-adv-os@marketing-adv-os-marketplace
 
 - Site: [sbroggio.adv.br](https://sbroggio.adv.br)
 - Instagram: [@luissbroggio](https://instagram.com/luissbroggio)
-- Email: contato@sbroggio.adv.br
+- Contato: DM [@luissbroggio](https://instagram.com/luissbroggio) no Instagram
 
 ## Licença
 
