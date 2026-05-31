@@ -4,6 +4,8 @@ description: >
   MARKETING ONBOARDING — Wizard interativo do plugin Marketing-Adv-OS. Configura o workspace COWORK do operador via fluxo estruturado em 10 blocos: track selector (Advogado vs Empresario), diretorio LGPD-aware, identidade da marca, PALETA DE CORES (3 modos: 5 presets, hex custom, extrair de URL via Pillow), publico-alvo + dor, oferta atual, tom de voz, tipografia, Diretoria Criativa R1-R4, ferramentas declaradas. Cria pasta `marketing/` com persona.md, MEMORY.md (com secao Identidade Visual persistente), CLAUDE.md e settings.local.json. Use quando operador disser: configurar marketing, instalar marketing, primeira vez, /start-marketing, /onboarding-marketing, configurar plugin marketing, comecar marketing.
 ---
 
+> **🖱️ Escolhas = botoes:** em campos de **lista fechada** (AREA_FOCO, tom, modo, atualizar/recriar, sim/nao) use a ferramenta **AskUserQuestion** para mostrar **botoes clicaveis** (max. 4 por pergunta; se houver mais, divida em 2). **Texto livre** (nome, OAB, cidade, e-mail) segue como pergunta digitada normal.
+
 # MARKETING ONBOARDING
 
 > Wizard de configuracao inicial com TRACK SELECTOR (Advogado/Empresario). Linguagem acolhedora, didatica.
