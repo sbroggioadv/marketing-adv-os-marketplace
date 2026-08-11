@@ -16,22 +16,6 @@
 > 11/08/2026 em diante, para quem chega ao repositório sem ter adquirido.
 
 
-> ## ⚖️ Este repositório NÃO é software livre
->
-> O código fica visível para viabilizar a instalação no Claude/Cowork — não porque seja gratuito.
->
-> **MARKETING ADV-OS — R$ 198,00, pagamento único** (sem assinatura, sem recorrência)
-> 👉 **[Adquirir a licença](https://pay.kirvano.com/e3fb1bbf-1fa4-477d-be84-4920953899e6)**
->
-> **Ao forkar ou clonar este repositório você adere à [licença de uso](LICENSE)**, devendo efetuar o
-> pagamento no link acima e enviar o comprovante para **luis@sbroggio.com.br**.
->
-> Os forks são públicos no GitHub e são registrados pelo titular (data, conta e repositório).
->
-> **Já comprou?** Nada a fazer — sua licença cobre o uso e o fork para instalação. Este aviso vale de
-> 11/08/2026 em diante, para quem chega ao repositório sem ter adquirido.
-
-
 Plugin profissional de marketing para escritórios de advocacia e empreendedores jurídicos. **47 skills** cobrindo identidade visual, copywriting, artes, produção e auditoria de compliance (OAB Provimento 205 ou CONAR+LGPD).
 
 ## Instalação rápida
