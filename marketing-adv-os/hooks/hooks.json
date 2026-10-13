@@ -1,14 +1,16 @@
 {
-  "SessionStart": [
-    {
-      "matcher": "",
-      "hooks": [
-        {
-          "type": "command",
-          "command": "echo '[marketing-adv-os] Plugin de marketing juridico ativo. Rode /start-marketing para configurar. Conteudo, calendario e campanhas com compliance OAB.'",
-          "timeout": 5
-        }
-      ]
-    }
-  ]
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '[marketing-adv-os] Plugin de marketing juridico ativo. Rode /start-marketing para configurar. Conteudo, calendario e campanhas com compliance OAB.'",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
 }
